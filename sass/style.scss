@@ -1,0 +1,49 @@
+body {
+    background-image: url('image/daimond_eyes_@2X.png');
+}
+
+.main-carousel {
+    margin-top: 40px;
+    width: 100vw;
+    height: 80vh;
+    min-height: 250px;
+    .carousel-cell {
+        width: 100%;
+        height: inherit;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-size: cover;
+        color: #fff;
+        .container {
+            max-width: 1200px;
+            margin: 0;   
+        }
+        h2 { 
+            color: #fff;
+            font-size: 40px; 
+            padding-top: 100px;
+            text-align: center;
+        }
+        p { 
+            color: #fff;
+            font-size: 30px; 
+            text-align: center;
+        }
+    }
+}
+
+.progress-bar {
+    height: 20px;
+    width: 0;
+    background: #333;
+  }
+  
+  .flickity-page-dots {
+    bottom: -40px;
+  }
+     
+  #map {
+    height: 400px;
+    width: 100%;
+   }

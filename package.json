@@ -1,0 +1,47 @@
+{
+  "name": "learning-git-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "test": "npm run test:html",
+    "test:html": "globstar nu-html-checker *.html",
+    "build": "npm-run-all build:*",
+    "build:clean": "rimraf css/*",
+    "build:sass": "node-sass --output-style -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "watch": "npm-run-all build -p watch:*",
+    "watch:sassprefixer": "onchange sass/* -- npm-run-all build:*  ",
+    "watch:browsersync": "browser-sync --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmasterka/Flickity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webmasterka/Flickity.git"
+  },
+  "homepage": "https://github.com/webmasterka/Flickity.git",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.26.3",
+    "globstar": "^1.0.0",
+    "node-sass": "^4.11.0",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^5.2.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "package.json": "^2.0.1",
+    "postcss-cli-simple": "^3.0.0",
+    "rimraf": "^2.6.3",
+    "vnu-jar": "^18.11.5"
+  }
+}
